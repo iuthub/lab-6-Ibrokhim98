@@ -1,4 +1,13 @@
 <?php
+/*
+	/quick/										
+	/[a-z0-9._-%]+@[a-z0-9]+\.[a-z]{2,4}/i     	
+	/\+998-\d{2}-\d{3}-\d{2}-\d{2}/				
+	/\s/										
+	/[^0-9\.\,]/								
+	/\n/										
+	/\[.+\]/									
+*/
 
 	$pattern="";
 	$text="";
@@ -15,10 +24,10 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 	$replacedText=preg_replace($pattern, $replaceText, $text);
 
 	if(preg_match($pattern, $text)) {
-						$match="Match!";
-					} else {
-						$match="Does not match!";
-					}
+		$match="Match!";
+	} else {
+		$match="Does not match!";
+	}
 }
 
 ?>
